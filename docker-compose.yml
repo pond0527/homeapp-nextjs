@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.db
+    ports:
+      - 13306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./database/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/init:/docker-entrypoint-initdb.d
+    env_file:
+      - database/.password.env
+    cap_add:
+      - SYS_NICE
