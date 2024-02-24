@@ -1,0 +1,39 @@
+USE homeapp;
+
+# ユーザーを管理
+CREATE TABLE IF NOT EXISTS user (
+  user_id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  is_admin BOOLEAN NOT NULL DEFAULT false,
+  is_valid BOOLEAN NOT NULL DEFAULT false,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+# 仕事を管理
+CREATE TABLE IF NOT EXISTS job (
+  job_id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  price INT NOT NULL DEFAULT 0,
+  is_valid BOOLEAN NOT NULL DEFAULT false,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+# 割り当て可能な仕事を管理
+CREATE TABLE IF NOT EXISTS assignable_job (
+  assignable_id SERIAL PRIMARY KEY,
+  user_id BIGINT NOT NULL,
+  job_id BIGINT NOT NULL,
+  is_valid BOOLEAN NOT NULL DEFAULT false,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+# お手伝い管理
+CREATE TABLE IF NOT EXISTS help_job (
+  help_id SERIAL PRIMARY KEY,
+  year INT NOT NULL,
+  month INT NOT NULL,
+  date INT NOT NULL,
+  assignable_id BIGINT NOT NULL,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
