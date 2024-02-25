@@ -1,0 +1,8 @@
+Dockerfile*
+**/README.md
+.dockerignore
+.git
+
+frontned/node_modules
+frontned/npm-debug.log
+frontned/.next

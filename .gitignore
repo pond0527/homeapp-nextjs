@@ -1,39 +1,39 @@
 #
-# frontend
+# frontned
 #
-frontend/node_modules
-frontend/.pnp
-frontend/.pnp.js
-frontend/.yarn/install-state.gz
+frontned/node_modules/
+frontned/.pnp
+frontned/.pnp.js
+frontned/.yarn/install-state.gz
 
 # testing
-frontend/coverage
+frontned/coverage
 
 # next.js
-frontend/.next/
-frontend/out/
+frontned/.next/
+frontned/out/
 
 # production
-frontend/build
+frontned/build
 
 # misc
-frontend/.DS_Store
-frontend/*.pem
+frontned/.DS_Store
+frontned/*.pem
 
 # debug
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
+frontned/npm-debug.log*
+frontned/yarn-debug.log*
+frontned/yarn-error.log*
 
 # local env files
-frontend/.env*.local
+frontned/.env*.local
 
 # vercel
-frontend/.vercel
+frontned/.vercel
 
 # typescript
-frontend/*.tsbuildinfo
-frontend/next-env.d.ts
+frontned/*.tsbuildinfo
+frontned/next-env.d.ts
 
 # 
 # database
