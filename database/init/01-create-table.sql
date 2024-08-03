@@ -37,3 +37,23 @@ CREATE TABLE IF NOT EXISTS help_job (
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+# レシピ
+CREATE TABLE IF NOT EXISTS recipe (
+  recipe_id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+# 材料
+CREATE TABLE IF NOT EXISTS ingredients (
+  ingredients_id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  stock_type VARCHAR(30) NOT NULL
+);
+
+# レシピ/材料
+CREATE TABLE IF NOT EXISTS recipe (
+  recipe_id BIGINT NOT NULL,
+  ingredients_id BIGINT NOT NULL,
+  amount VARCHAR(30) NOT NULL,
+  PRIMARY KEY(recipe_id, ingredients_id)
+);
