@@ -20,10 +20,10 @@ export default function Page() {
                 <button
                     disabled={recipeName == null || recipeName === ""}
                     onClick={() => {
-                        if (recipeName != null && recipeName === "") {
+                        if (recipeName != null && recipeName !== "") {
                             createRecipe("テスト");
                         } else {
-                            console.error("必須広告")
+                            console.error("必須項目")
                         }
                     }}>登録</button>
             </div>
