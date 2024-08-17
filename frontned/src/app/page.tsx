@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 export default async function Home() {
 
   return (
-    <main className={styles.main}>
-      HOME
-    </main>
+    <div className={styles.main}>
+      Home
+    </div>
   );
 }
