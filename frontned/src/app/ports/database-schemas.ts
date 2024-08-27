@@ -1,6 +1,6 @@
 import { RowDataPacket } from "mysql2";
 
 export interface Recipe extends RowDataPacket {
-  recipeId: number;
+  recipe_id: number;
   name: string;
 }

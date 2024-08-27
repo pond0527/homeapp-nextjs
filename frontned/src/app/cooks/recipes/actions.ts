@@ -14,7 +14,7 @@ export const createRecipe = async (name: string) => {
   }
 };
 
-export const fetchRecipes = async (): Promise<Recipe[]> => {
+export const fetchRecipes = async (): Promise<RecipeModel[]> => {
   const con = await pool.getConnection();
 
   try {
@@ -24,7 +24,7 @@ export const fetchRecipes = async (): Promise<Recipe[]> => {
 
     console.log(results);
 
-    return results;
+    return results.map((o) => ({ recipeId: o.recipe_id, name: o.name }));
   } catch (e) {
     throw e;
   }
